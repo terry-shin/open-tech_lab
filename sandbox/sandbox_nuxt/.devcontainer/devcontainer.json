@@ -1,0 +1,13 @@
+{
+  "name" : "nuxt-sandbox",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+    ],
+  "service": "nuxt-sandbox",
+  "workspaceFolder": "/home/app/",
+  "settings": {},
+  "extensions": [
+      "octref.vetur",
+      "dbaeumer.vscode-eslint"
+    ]
+}

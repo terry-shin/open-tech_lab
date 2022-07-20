@@ -1,0 +1,16 @@
+version: '3'
+services:
+  sandbox:
+    restart: always
+    build:
+      context: .
+    container_name: 'sandbox_flask'
+    working_dir: '/usr/local/src/'
+    tty: true
+    ports:
+      - "5000:80"
+    volumes:
+      - ./app:/usr/local/src/app
+    environment:
+      - TZ=Asia/Tokyo
+    command: python app/index.py

@@ -1,0 +1,5 @@
+google-cloud-pubsub == 2.2.0
+google-cloud-bigquery == 2.7.0
+google-cloud-storage == 1.35.0
+lxml ==4.4.2
+flask

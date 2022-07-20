@@ -1,0 +1,16 @@
+{
+  "name": "sample-http",
+  "version": "0.0.1",
+  "main": "server.js",
+  "nodemonConfig":{
+    " ignore ":["work/*.*"],
+    " delay ":"2500 "
+  },
+  "dependencies": {
+    "puppeteer": "^3.0.0",
+    "@google-cloud/storage": "^2.0.3",
+    "date-utils": "*",
+    "express": "^4.16.4",
+    "log4js": "^6.3.0"
+  }
+}

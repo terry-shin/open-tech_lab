@@ -1,0 +1,14 @@
+version: '3'
+services:
+  nuxt-sandbox:
+    restart: always
+    build:
+      context: .
+    ports:
+      - 3000:3000
+      - 9005:9005
+    container_name: 'nuxt_sandbox'
+    tty: true
+    stdin_open: true
+    volumes:
+      - ../:/home/app

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  sandbox:
+    restart: always
+    build:
+      context: .
+      shm_size: 1g  #selenium使う際に要調整
+    shm_size: 1g    #selenium使う際に要調整
+    container_name: 'sandbox'
+    working_dir: '/usr/local/src/'
+    tty: true
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./work:/usr/local/src/work
+      - ./notebooks:/usr/local/src/notebooks
+    environment:
+      - TZ=Asia/Tokyo

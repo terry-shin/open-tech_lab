@@ -1,0 +1,18 @@
+version: '3'
+services:
+  nodejs:
+    restart: always
+    build:
+      context: .
+      shm_size: 1g
+    shm_size: 1g
+    container_name: 'nodejs'
+    working_dir: '/usr/local/src/app/'
+    tty: true
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./work:/usr/local/src/app/work
+      - ./output:/usr/local/src/app/output
+    environment:
+      - TZ=Asia/Tokyo

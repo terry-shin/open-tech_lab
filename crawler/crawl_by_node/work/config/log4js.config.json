@@ -1,0 +1,30 @@
+{
+  "appenders": {
+    "access": {
+      "type": "file",
+      "filename": "logs/access.log"
+    },
+    "app": {
+      "type": "file",
+      "filename": "logs/app.log"
+    },
+    "error": {
+      "type": "file",
+      "filename": "logs/err.log"
+    }
+  },
+  "categories": {
+    "default": {
+      "appenders": ["app"],
+      "level": "debug"
+    },
+    "err": {
+      "appenders": ["error"],
+      "level": "warn"
+    },
+    "web": {
+      "appenders": ["access"],
+      "level": "debug"
+    }
+  }
+}
