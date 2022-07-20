@@ -117,7 +117,6 @@ firebase login
 
 ### 【セッティング】
 - Firebaseの「Hosting」から、サイトを追加
-![サイト追加](/sandbox/sandbox_nuxt/doc/image/サイト追加.png)
 
 
 ### 【初期処理】
@@ -147,8 +146,6 @@ firebase init
 firebase target:apply hosting [任意のサイト名] [Firebase上でのサイト]
 ```
 
-![アプリ追加](/sandbox/sandbox_nuxt/doc/image/firebase.png)
-
 -  デプロイ
     - SPAの場合
         ```
@@ -160,5 +157,3 @@ firebase target:apply hosting [任意のサイト名] [Firebase上でのサイ�
         firebase deploy --only hosting:[任意のサイト名]
         ```
 
-## 参考
-[青木さんqiita](https://aone.qiita.com/ryoaoki/items/2810c0790e0492129c00)
