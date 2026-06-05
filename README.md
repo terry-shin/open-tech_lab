@@ -1,4 +1,11 @@
 ## 技術検証用リポジトリ
+### ai
+主にClaude系の設定とか
+- common_claude
+  - 共通で使う設定
+- terraform_claude
+  - terraformで使う設定
+
 ### api-blueprint
 APIのIF仕様書作成用
 

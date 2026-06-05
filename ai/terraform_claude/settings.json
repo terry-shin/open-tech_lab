@@ -1,0 +1,41 @@
+{
+  "permissions": {
+    "deny": [
+      "Bash(terraform apply)",
+      "Bash(terraform apply:*)",
+      "Bash(terraform destroy)",
+      "Bash(terraform destroy:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cmd=$(jq -r '.tool_input.command'); if printf '%s' \"$cmd\" | grep -Eq '(^|[^[:alnum:]_./-])terraform[[:space:]]+(apply|destroy)([[:space:]]|$)'; then printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"terraform apply/destroy is prohibited in this project (.claude/settings.json)\"}}'; fi",
+            "statusMessage": "terraform apply/destroy をチェック中"
+          },
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/terraform-aws-preflight.sh\"",
+            "statusMessage": "terraform 認証/権限チェック中",
+            "timeout": 15
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR:-.}/.claude/hooks/terraform-provisioner-guard.sh\"",
+            "statusMessage": "provisioner local-exec の apply/destroy をチェック中",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
