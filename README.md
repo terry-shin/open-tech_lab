@@ -5,6 +5,8 @@
   - 共通で使う設定
 - terraform_claude
   - terraformで使う設定
+- claude-code-template
+  - いろんなエージェントとか実業務を想定したセット
 
 ### api-blueprint
 APIのIF仕様書作成用

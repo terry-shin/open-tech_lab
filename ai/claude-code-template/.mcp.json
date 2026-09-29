@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "aws-mcp": {
+      "command": "uvx",
+      "timeout": 100000,
+      "args": [
+        "mcp-proxy-for-aws==1.6.3",
+        "https://aws-mcp.us-east-1.api.aws/mcp"
+      ],
+      "env": {
+        "AWS_MCP_PROXY_PROFILES": "<PROD_PROFILE> <STG_PROFILE> <DEV_PROFILE> <OPS_PROFILE>"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
